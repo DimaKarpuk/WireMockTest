@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git url: 'https://github.com/DimaKarpuk/WireMock.git'
+                git url: 'https://github.com/DimaKarpuk/WireMockTest.git'
             }
         }
 
