@@ -4,6 +4,7 @@ import com.github.tomakehurst.wiremock.junit5.WireMockTest;
 import io.restassured.http.ContentType;
 import models.GenerateRandomBookModel;
 import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.RegisterExtension;
 
@@ -35,6 +36,7 @@ public class MockTest extends TestBase {
         );
     }
 
+    @DisplayName("Получение книги со стабом")
     @Test
     public void getBookWithWiremock() {
         stub(ISBN);

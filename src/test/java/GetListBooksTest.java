@@ -4,6 +4,8 @@ import com.github.tomakehurst.wiremock.junit5.WireMockTest;
 import models.BooksModels;
 import models.GenerateRandomBooksModel;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.RegisterExtension;
 
@@ -31,6 +33,7 @@ public class GetListBooksTest extends TestBase {
         );
     }
 
+    @DisplayName("Получение списка книг со стабом")
     @Test
     public void getListBooksTest() {
         stubForGetListBooks(10);
