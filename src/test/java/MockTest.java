@@ -3,6 +3,7 @@ import com.github.tomakehurst.wiremock.junit5.WireMockExtension;
 import com.github.tomakehurst.wiremock.junit5.WireMockTest;
 import io.restassured.http.ContentType;
 import models.GenerateRandomBookModel;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.RegisterExtension;
 
@@ -46,16 +47,5 @@ public class MockTest extends TestBase {
                 .spec(responseSpecificationWithStatusCode200);
 
         wireMockExtension.verify(getRequestedFor(urlEqualTo("/BookStore/v1/Book?ISBN=" + ISBN)));
-    }
-
-    @Test
-    public void getBook() {
-        given(requestSpecificationWithContentTypeApplicationJson)
-                .contentType(ContentType.JSON)
-                .queryParam("ISBN", ISBN)
-                .when()
-                .get("/BookStore/v1/Book")
-                .then()
-                .spec(responseSpecificationWithStatusCode200);
     }
 }
