@@ -1,0 +1,7 @@
+services:
+  tests:
+    build: .
+    container_name: test_container
+    volumes:
+      - .:/app
+    command: ["./gradlew", "test"]
